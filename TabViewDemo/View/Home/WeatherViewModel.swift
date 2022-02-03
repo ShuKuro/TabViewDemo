@@ -13,7 +13,7 @@ class WeatherViewModel: ObservableObject {
     let area: Area
     var weatherManager = WeatherManager()
     @Published var weather: WeatherData?
-    @Published var weatherIcon: Image = Image(systemName: "cloud.fill")
+    @Published var weatherIcon: Image = Image(systemName: "cloud")
         
     
     private var disposables = Set<AnyCancellable>()
@@ -40,11 +40,11 @@ class WeatherViewModel: ObservableObject {
     func setWeatherIcon() {
         if let main = weather?.weather[0].main {
             if main == "Clear" {
-                weatherIcon = Image(systemName: "sun.max.fill")
+                weatherIcon = Image(systemName: "sun.max")
             } else if main == "Rain" {
-                weatherIcon = Image(systemName: "cloud.rain.fill")
+                weatherIcon = Image(systemName: "cloud.rain")
             } else if main == "Clouds" {
-                weatherIcon = Image(systemName: "cloud.fill")
+                weatherIcon = Image(systemName: "cloud")
             } else if main == "Snow" {
                 weatherIcon = Image(systemName: "snowflake")
             } else if main == "Extreme" {

@@ -39,6 +39,19 @@ struct WeatherView: View {
                         .fontWeight(.bold)
                         .padding()
                     }
+                } else {
+                    HStack {
+                    viewModel.weatherIcon
+                        .font(.system(size: 100))
+                        .frame(height: 100)
+
+                    Spacer()
+                    
+                    Text("10°")
+                        .font(.system(size: 100))
+                        .fontWeight(.bold)
+                        .padding()
+                    }
                 }
 
                 Spacer()
