@@ -20,7 +20,7 @@ struct WeatherView: View {
         ZStack {
             VStack {
                 HStack {
-                     Text("\(Date().formatted(.dateTime.month().day().weekday()))")
+                     Text("Today, \(Date().formatted(.dateTime.month().day().weekday()))")
                         .font(.title)
                     Spacer()
                 }
@@ -28,29 +28,47 @@ struct WeatherView: View {
                 
                 if let weather = viewModel.weather {
                     HStack {
-                    viewModel.weatherIcon
-                        .font(.system(size: 100))
-                        .frame(height: 100)
-
-                    Spacer()
-                    
-                    Text(weather.main.feelsLike.roundDouble() + "°")
-                        .font(.system(size: 100))
-                        .fontWeight(.bold)
-                        .padding()
+                        Spacer()
+                        
+                        viewModel.weatherIcon
+                            .font(.system(size: 80))
+                            .frame(height: 80)
+                        
+                        Text("\(weather.main.feelsLike.roundDouble())°")
+                            .font(.system(size: 80))
+                            .fontWeight(.bold)
+                            .padding()
+                        Spacer()
+                        
                     }
+                    
+                    HStack {
+                        Text("Max:\(weather.main.tempMax.roundDouble())°")
+                            .font(.system(size: 20))
+                        Text("Min:\(weather.main.tempMin.roundDouble())°")
+                            .font(.system(size: 20))
+                    }
+                    
                 } else {
                     HStack {
-                    viewModel.weatherIcon
-                        .font(.system(size: 100))
-                        .frame(height: 100)
-
-                    Spacer()
+                        Spacer()
+                        
+                        viewModel.weatherIcon
+                            .font(.system(size: 80))
+                            .frame(height: 80)
+                        
+                        Text("-10°")
+                            .font(.system(size: 80))
+                            .fontWeight(.bold)
+                            .padding()
+                        Spacer()
+                    }
                     
-                    Text("10°")
-                        .font(.system(size: 100))
-                        .fontWeight(.bold)
-                        .padding()
+                    HStack {
+                        Text("Max:10°")
+                            .font(.system(size: 20))
+                        Text("Min:0°")
+                            .font(.system(size: 20))
                     }
                 }
 

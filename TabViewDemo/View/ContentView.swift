@@ -31,7 +31,7 @@ struct ContentView: View {
                 HomeView()
                     .navigationTitle("Weather")
                     .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarColor(backgroundColor: UIColor(named: "Base")!, tintColor: .white)
+//                    .navigationBarColor(backgroundColor: UIColor(named: "Base")!, tintColor: .white)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
                             leftButton
