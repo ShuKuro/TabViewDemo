@@ -23,6 +23,8 @@
 		A21D4FA827AB616600261BA7 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D4FA727AB616600261BA7 /* ApiClient.swift */; };
 		A21D4FAB27AB62E000261BA7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A21D4FAA27AB62E000261BA7 /* Alamofire */; };
 		A21D4FAF27AB8BB700261BA7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D4FAE27AB8BB700261BA7 /* Extensions.swift */; };
+		A26EADCB281D732400542A09 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26EADCA281D732400542A09 /* SecondView.swift */; };
+		A26EADCD281D840000542A09 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26EADCC281D840000542A09 /* CategoriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		A21D4FA327AB57FE00261BA7 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		A21D4FA727AB616600261BA7 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		A21D4FAE27AB8BB700261BA7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A26EADCA281D732400542A09 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		A26EADCC281D840000542A09 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +124,20 @@
 			children = (
 				690E8EBD27A141D5009C53BF /* ContentView.swift */,
 				A21D4F9627A9980500261BA7 /* Home */,
+				A26EADC9281D731100542A09 /* Second */,
 				A21D4F9727A9981800261BA7 /* Setting */,
 				A21D4F9427A83BBE00261BA7 /* View+.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A26EADC9281D731100542A09 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				A26EADCA281D732400542A09 /* SecondView.swift */,
+				A26EADCC281D840000542A09 /* CategoriesView.swift */,
+			);
+			path = Second;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26EADCB281D732400542A09 /* SecondView.swift in Sources */,
 				A21D4F9A27A9989300261BA7 /* HomeViewModel.swift in Sources */,
 				A21D4F8B27A1772D00261BA7 /* SettingView.swift in Sources */,
 				A21D4FA227AAD9FB00261BA7 /* WeatherManager.swift in Sources */,
@@ -209,6 +224,7 @@
 				690E8EBE27A141D5009C53BF /* ContentView.swift in Sources */,
 				A21D4F9E27A99E4200261BA7 /* WeatherView.swift in Sources */,
 				A21D4F8F27A308BB00261BA7 /* HeaderTab.swift in Sources */,
+				A26EADCD281D840000542A09 /* CategoriesView.swift in Sources */,
 				A21D4F8927A176EE00261BA7 /* HomeView.swift in Sources */,
 				A21D4FAF27AB8BB700261BA7 /* Extensions.swift in Sources */,
 				A21D4F9527A83BBE00261BA7 /* View+.swift in Sources */,
@@ -345,7 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TabViewDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = T6HST2ZLKB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -358,7 +374,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = io.supereight.tabviewdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -374,7 +390,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TabViewDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = T6HST2ZLKB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -387,7 +403,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = io.supereight.tabviewdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
