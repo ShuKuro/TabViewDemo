@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreLocation
 
-struct Area: Identifiable {
+struct Area: Identifiable, Hashable {
     var id: Int
     var name: String
 }
