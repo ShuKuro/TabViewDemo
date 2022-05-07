@@ -12,12 +12,12 @@ var tabs = ["All", "Indoor", "Outdoor", "Garden"]
 
 struct CategoriesView: View {
   @State var selectedTab = tabs[0]
-  @Namespace var animation
+  @Namespace var namespace
   var body: some View {
     ScrollView(.horizontal, showsIndicators: false) {
       HStack {
         ForEach(tabs, id: \.self) { tab in
-          CategoryButton(text: tab, selected: $selectedTab, animation: animation)
+          CategoryButton(text: tab, selected: $selectedTab, namespace: namespace)
         }
       }
       .padding(.vertical, 24)
@@ -28,7 +28,7 @@ struct CategoriesView: View {
 struct CategoryButton: View {
   var text: String
   @Binding var selected: String
-  var animation: Namespace.ID
+  var namespace: Namespace.ID
 
   var body: some View {
     Button(action: {
@@ -45,7 +45,9 @@ struct CategoryButton: View {
         if selected == text {
           Color("Primary")
             .cornerRadius(12)
-            .matchedGeometryEffect(id: "Tab", in: animation)
+            .matchedGeometryEffect(id: "TabButton", in: namespace)
+        } else {
+
         }
       })
 

@@ -9,8 +9,10 @@ import SwiftUI
 
 struct SecondView: View {
     var body: some View {
-      ZStack {
+      VStack {
         CategoriesView()
+        Text("Hello")
+        Spacer()
       }
     }
 }
