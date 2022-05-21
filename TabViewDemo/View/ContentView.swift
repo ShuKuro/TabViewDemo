@@ -32,7 +32,6 @@ struct ContentView: View {
         HomeView()
           .navigationTitle("Weather")
           .navigationBarTitleDisplayMode(.inline)
-        //                    .navigationBarColor(backgroundColor: UIColor(named: "Base")!, tintColor: .white)
           .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
               leftButton
@@ -53,18 +52,18 @@ struct ContentView: View {
         self.tappedTwice = false
       })
 
-      SecondView()
-        .tabItem {
-          Label("Second", systemImage: "house.fill")
-        }
-        .tag(1)
-        .id(second)
+//      SecondView()
+//        .tabItem {
+//          Label("Second", systemImage: "house.fill")
+//        }
+//        .tag(1)
+//        .id(second)
 
       SettingView()
         .tabItem {
           Label("Setting", systemImage: "gearshape")
         }
-        .tag(2)
+        .tag(1)
         .id(bookmark)
     }
     .accentColor(.cyan)
