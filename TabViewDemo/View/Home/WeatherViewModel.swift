@@ -11,7 +11,7 @@ import SwiftUI
 import MapKit
 
 class WeatherViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
-  let area: Area
+  var area: Area
   var weatherManager = WeatherManager()
   @Published var weather: WeatherData?
   @Published var weatherIcon: Image = Image(systemName: "cloud")
@@ -32,6 +32,8 @@ class WeatherViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 
   init(area: Area) {
     self.area = area
+    super.init()
+    locationManager.delegate = self
   }
 
   func getWeather() {
