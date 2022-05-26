@@ -10,11 +10,13 @@ import Combine
 import SwiftUI
 import MapKit
 
-class WeatherViewModel: ObservableObject {
+class WeatherViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
   let area: Area
   var weatherManager = WeatherManager()
   @Published var weather: WeatherData?
   @Published var weatherIcon: Image = Image(systemName: "cloud")
+
+  @Published var location: CLLocationCoordinate2D?
   @Published var region = MKCoordinateRegion(
     center : CLLocationCoordinate2D(
       // 緯度経度
@@ -24,6 +26,7 @@ class WeatherViewModel: ObservableObject {
     latitudinalMeters: 10000.0, // 南北距離
     longitudinalMeters: 10000.0 // 東西距離
   )
+  var locationManager = CLLocationManager()
 
   private var disposables = Set<AnyCancellable>()
 
@@ -72,5 +75,26 @@ class WeatherViewModel: ObservableObject {
 
       }
     }
+  }
+
+  func requestLocation() {
+    locationManager.requestLocation()
+  }
+
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    guard let location = locations.first else { return }
+
+    DispatchQueue.main.async {
+      self.location = location.coordinate
+      self.region = MKCoordinateRegion(
+        center: location.coordinate,
+        span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+      )
+    }
+  }
+
+  func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    //Handle any errors here...
+    print (error)
   }
 }

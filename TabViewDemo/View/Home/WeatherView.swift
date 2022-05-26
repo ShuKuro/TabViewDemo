@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import CoreLocationUI
 
 struct WeatherView: View {
   let area: Area
@@ -20,12 +21,9 @@ struct WeatherView: View {
   var body: some View {
     ZStack {
       VStack {
-        HStack {
-          Text("Today, \(Date().formatted(.dateTime.month().day().weekday()))")
-            .font(.title)
-          Spacer()
-        }
-        .padding()
+        Text("\(Date().formatted(.dateTime.month().day().weekday()))")
+          .font(.headline)
+          .padding()
 
         if let weather = viewModel.weather {
           HStack {
@@ -66,7 +64,12 @@ struct WeatherView: View {
           .font(.body)
         }
 
-        Map(coordinateRegion: $viewModel.region)
+        ZStack {
+          Map(coordinateRegion: $viewModel.region)
+          LocationButton {
+            viewModel.requestLocation()
+          }
+        }
       }
 
     }
