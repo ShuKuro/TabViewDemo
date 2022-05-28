@@ -80,10 +80,12 @@ class WeatherViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
   }
 
   func requestLocation() {
-    locationManager.requestLocation()
+//    locationManager.requestLocation()
+    locationManager.startUpdatingLocation()
   }
 
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    locationManager.stopUpdatingLocation()
     guard let location = locations.first else { return }
 
     DispatchQueue.main.async {
