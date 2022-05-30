@@ -64,19 +64,19 @@ struct WeatherView: View {
           .font(.body)
         }
 
-        ZStack {
+        ZStack(alignment: .bottomTrailing) {
           Map(coordinateRegion: $viewModel.region)
-          VStack {
-            Spacer()
-            LocationButton {
-              viewModel.requestLocation()
-            }
-            .cornerRadius(30)
-            .symbolVariant(.fill)
-            .foregroundColor(.white)
-            .padding(.bottom)
-          }
 
+          LocationButton(.currentLocation) {
+            viewModel.requestLocation()
+          }
+          .cornerRadius(30)
+          .symbolVariant(.fill)
+          .labelStyle(.iconOnly)
+          .foregroundColor(.white)
+          .padding(.bottom)
+          .padding(.trailing)
+          .tint(.cyan)
         }
       }
 
